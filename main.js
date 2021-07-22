@@ -1,8 +1,6 @@
 var btnGenera = document.getElementById("genera");
 var btnAnnulla = document.getElementById("annulla");
-console.log(btnGenera);
-var nome, km, fascia_eta, sconto;
-var prezzo = km * 0.21;
+var nome, km = 0, fascia_eta;
 
 var Minorenne = document.getElementById("minorenne");
 var Maggiorenne = document.getElementById("maggiorenne");
@@ -15,18 +13,26 @@ btnGenera.addEventListener("click",
         nome = document.getElementById("nome").value;
         km = document.getElementById("km").value;
         fascia_eta = document.getElementById("fascia_eta").value;
+        var prezzo = km * 0.21;
+        var numerocarrozza = Math.floor(Math.random() * 100) + 1;
+        var codiceCP = Math.floor(Math.random() * (100000 - 90000 +1)) + 90000;
 
-        if(fascia_eta == "Minorenne"){
-            sconto = (prezzo / 100) * 20;
-            console.log(prezzo - sconto);
+        if(fascia_eta == "minorenne"){
+            prezzo = (prezzo / 100) * 80;
+            document.getElementById("offerta").innerHTML = ("Sconto Minorenne del 20%");
         }
-        else if (fascia_eta == "Over65"){
-            sconto = (prezzo / 100) * 40;
-            console.log(prezzo - sconto);
+        else if (fascia_eta == "over65"){
+            prezzo = (prezzo / 100) * 60;
+            document.getElementById("offerta").innerHTML = ("Sconto Over65 del 40%");
         }
         else{
-            console.log(prezzo);
+            document.getElementById("offerta").innerHTML = ("Biglietto Standard");
         }
+        prezzo = prezzo.toFixed(2);
+        document.getElementById("nome-passeggero").innerHTML = (nome);
+        document.getElementById("carrozza").innerHTML = (numerocarrozza);
+        document.getElementById("codice").innerHTML = (codiceCP);
+        document.getElementById("costo").innerHTML = (prezzo + "€");
     }
 )
 
@@ -35,8 +41,8 @@ btnAnnulla.addEventListener("click",
         biglietto.style.display = "none";
 
         //svuoto input
-        document.getElementById("nome").value = " ";
-        document.getElementById("km").value = " ";
-        document.getElementById("fascia_eta").value = " ";
+        document.getElementById("nome").value = '';
+        document.getElementById("km").value = '';
+        document.getElementById("fascia_eta").value = '';
     }
 ) 
