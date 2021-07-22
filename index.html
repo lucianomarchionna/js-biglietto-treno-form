@@ -10,28 +10,39 @@
 <body>
     <div></div>
     <header>
-        <h1 id="title">CALCOLA IL PREZZO DEL TUO BIGLIETTO</h1>
+        <h1 class="title">CALCOLA IL PREZZO DEL TUO BIGLIETTO</h1>
     </header>
     <main>
-        <div class="container">
+        <div class="container-border-radius">
 
-            <label for="nome">Nome Cognome:</label>
-            <input id="nome" type="text" name="nome" placeholder="Inserisci il tuo nome">
+            <div class="flex justify-content-around">
+                <div class="flex column">
+                    <label for="nome"  class="common_settings">Nome Cognome</label>
+                    <input id="nome" type="text" name="nome" placeholder="Inserisci il tuo nome">
+                </div>
+                <div class="flex column">
+                    <label for="km"  class="common_settings">Km da percorrere</label>
+                    <input id="km" type="text" name="km" placeholder="Inserisci i km">
+                </div>
+                <div class="flex column">
+                    <label for="fascia_eta"  class="common_settings">Fascia d'et&agrave;</label>
+                    <select name="fascia_eta" id="fascia_eta">
+                        <option value="minorenne">Minorenne</option>
+                        <option value="maggiorenne">Maggiorenne</option>
+                        <option value="over65">Over 65</option>
+                    </select>
+                </div>
+            </div>
 
-            <label for="km">Km da percorrere:</label>
-            <input id="km" type="text" name="km" placeholder="Inserisci i km">
-
-            <label for="fascia_eta">Fascia d'et&egrave;</label>
-            <select name="fascia_eta" id="fascia_eta">
-                <option value="minorenne">Minorenne</option>
-                <option value="maggiorenne">Maggiorenne</option>
-                <option value="over65">Over 65</option>
-            </select>
+            <button id="genera" name="genera">Genera</button>
+            <button id="annulla" name="annulla">Annulla</button>
 
         </div>
 
         <div class="container">
-            <button id="genera" name="genera">Genera</button>
+            <div id="biglietto" class="biglietto">
+                <h2 class="title">IL TUO BIGLIETTO</h2>
+            </div>
         </div>
     </main>
 
