@@ -8,13 +8,33 @@
     <title>Biglietto Treno</title>
 </head>
 <body>
+    <div></div>
     <header>
-
+        <h1 id="title">CALCOLA IL PREZZO DEL TUO BIGLIETTO</h1>
     </header>
     <main>
+        <div class="container">
 
+            <label for="nome">Nome Cognome:</label>
+            <input id="nome" type="text" name="nome" placeholder="Inserisci il tuo nome">
+
+            <label for="km">Km da percorrere:</label>
+            <input id="km" type="text" name="km" placeholder="Inserisci i km">
+
+            <label for="fascia_eta">Fascia d'et&egrave;</label>
+            <select name="fascia_eta" id="fascia_eta">
+                <option value="minorenne">Minorenne</option>
+                <option value="maggiorenne">Maggiorenne</option>
+                <option value="over65">Over 65</option>
+            </select>
+
+        </div>
+
+        <div class="container">
+            <button id="genera" name="genera">Genera</button>
+        </div>
     </main>
-    
+
     <script src="main.js"></script>
 </body>
 </html>
